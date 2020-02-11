@@ -13,31 +13,31 @@
 * [Difficulty](#difficulty-statistic)
 * [Total Supply](#total-supply-statistic)
 
-A Ravencoin blockchain REST and web socket API service for [Ravencore Node](https://github.com/RavenDevKit/ravencore-node).
+A B4bcoin blockchain REST and web socket API service for [B4bcore Node](https://github.com/B4Bcoin/b4bcore-node).
 
-This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/RavenDevKit/insight-ui.
+This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/B4Bcoin/insight-ui.
 
 ## Getting Started
 
 ```bashl
-npm install -g ravencore-node
-ravencore-node create mynode
+npm install -g b4bcore-node
+b4bcore-node create mynode
 cd mynode
-ravencore-node install insight-api
-ravencore-node start
+b4bcore-node install insight-api
+b4bcore-node start
 ```
 
 The API endpoints will be available by default at: `http://localhost:3001/api/`
 
 ## Prerequisites
 
-- [Ravencore Node](https://github.com/RavenDevKit/ravencore-node)
+- [B4bcore Node](https://github.com/B4Bcoin/b4bcore-node)
 
-**Note:** You can use an existing Ravencoin data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `raven.conf`, as well as a few other additional fields.
+**Note:** You can use an existing B4bcoin data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `b4b.conf`, as well as a few other additional fields.
 
 ## Query Rate Limit
 
-To protect the server, insight-api has a built it query rate limiter. It can be configurable in `ravencore-node.json` with:
+To protect the server, insight-api has a built it query rate limiter. It can be configurable in `b4bcore-node.json` with:
 ``` json
   "servicesConfig": {
     "insight-api": {
@@ -47,7 +47,7 @@ To protect the server, insight-api has a built it query rate limiter. It can be 
     }
   }
 ```
-With all the configuration options available: https://github.com/RavenDevKit/insight-api/blob/master/lib/ratelimiter.js#L10-17
+With all the configuration options available: https://github.com/B4Bcoin/insight-api/blob/master/lib/ratelimiter.js#L10-17
 
 Or disabled entirely with:
 ``` json
@@ -58,7 +58,7 @@ Or disabled entirely with:
   }
 ```
 
-**Note:** `routePrefix` can be configurable in `ravencore-node.json` with:
+**Note:** `routePrefix` can be configurable in `b4bcore-node.json` with:
 
 ``` json
   "servicesConfig": {
@@ -515,7 +515,7 @@ POST response:
   /api/peer
 ```
 
-### Status of the Ravencoin Network
+### Status of the B4bcoin Network
 ```
   /api/status?q=xxx
 ```
@@ -613,9 +613,9 @@ Sample output:
   price_usd: "0.0294763"
 }
 ```
-### `raven` room: 
+### `b4b` room: 
 
-`raven/tx`: Returns a transformed tx as a json element detailing the transaction
+`b4b/tx`: Returns a transformed tx as a json element detailing the transaction
 Sample output:
 ```
 {
@@ -635,7 +635,7 @@ isRBF: true
 }
 ```
 
-`raven/block`: Returns a transformed block as a json element detailing the block
+`b4b/block`: Returns a transformed block as a json element detailing the block
 Sample output:
 ```
 {
